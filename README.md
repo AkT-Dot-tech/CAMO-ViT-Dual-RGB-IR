@@ -1,4 +1,5 @@
 ﻿# CAMO-ViT
+
 ### Vision-Transformer Framework for Camouflaged Object Segmentation in Low-Visibility Aerial Imagery
 
 CAMO-ViT is a research-oriented deep-learning project focused on camouflaged object segmentation in aerial imagery.
@@ -11,7 +12,7 @@ The newer version explores whether combining visible and infrared information th
 
 CAMO-ViT has been developed through two major iterations.
 
-### Version 1 â€” RGB-only CAMO-ViT
+### Version 1 — RGB-only CAMO-ViT
 
 The initial implementation used visible RGB imagery and a SegFormer-B0-based segmentation architecture.
 
@@ -31,9 +32,9 @@ It established the initial segmentation pipeline and provided a baseline for sub
 
 Although the model performed well on the dataset's test images, its predictions were less reliable on arbitrary images outside the training dataset. This highlighted the need to investigate generalization, dataset diversity, and the limitations of relying on visible-spectrum information alone.
 
-Original RGB-only project: (https://github.com/AkT-Dot-tech/CAMO-ViT)
+**Original RGB-only project:** (https://github.com/AkT-Dot-tech/CAMO-ViT)
 
-### Version 2 â€” Multimodal RGB+IR CAMO-ViT
+### Version 2 — Multimodal RGB+IR CAMO-ViT
 
 The newer implementation introduces a dual-stream architecture that processes visible RGB and infrared imagery separately before combining their extracted features.
 
@@ -52,16 +53,16 @@ The objective is to leverage complementary information from visible and infrared
 
 The selected model uses a dual-stream SegFormer-B0 architecture with concatenation-based feature fusion.
 
-Processing pipeline:
+**Processing pipeline:**
 
 1. Receive a corresponding RGB and infrared image pair.
-2. Preprocess both modalities and resize them to 384 Ã— 384.
+2. Preprocess both modalities and resize them to 384 × 384.
 3. Extract features independently using two SegFormer-B0 encoders.
 4. Combine the extracted features through concatenation fusion.
 5. Generate segmentation logits through the segmentation decoder.
 6. Apply sigmoid activation and a threshold of 0.5 to produce the binary segmentation mask.
 
-## Performance â€” Current Model
+## Performance — Current Model
 
 The selected Dual-Stream SegFormer-B0 with concatenation fusion achieved the following results on the VIAC test dataset:
 
@@ -70,8 +71,8 @@ The selected Dual-Stream SegFormer-B0 with concatenation fusion achieved the fol
 | Dice Score | 0.9232 |
 | IoU | 0.8645 |
 | MAE | 0.0126 |
-| Structure Measure (SÎ±) | 0.9252 |
-| Mean Enhanced Alignment (EÏ†) | 0.9725 |
+| Structure Measure (Sα) | 0.9252 |
+| Mean Enhanced Alignment (Eφ) | 0.9725 |
 | Weighted F-measure | 0.9047 |
 | Parameters | 7.23M |
 | Inference speed | 56.43 FPS |
@@ -98,7 +99,7 @@ It contains:
 - Infrared images
 - Ground-truth segmentation masks
 
-Current dataset split:
+**Current dataset split:**
 
 | Split | Samples |
 |---|---:|
@@ -121,28 +122,23 @@ The project includes a Streamlit application that allows users to:
 - Inspect probability maps.
 - Download prediction outputs.
 
-**Live Demo:** To be added after deployment.
+**Live Demo:** Coming soon.
 
 ## Model Checkpoint
 
 The trained dual-stream model checkpoint is hosted separately from the source code.
 
-**Hugging Face Model Repository:** https://huggingface.co/AKT033/camo-vit-dual-concat-b0
+**Hugging Face Model Repository:** [CAMO-ViT Dual-Stream RGB+IR](https://huggingface.co/AKT033/camo-vit-dual-concat-b0)
 
-The application automatically downloads `best.pth` from the Hugging Face repository during its first inference run. The checkpoint is cached for subsequent runs.text
-model/
-â””â”€â”€ dual_concat_b0_ft_s1/
-    â””â”€â”€ dual_concat_b0_ft_s1/
-        â””â”€â”€ best.pth
-```
+The application automatically downloads `best.pth` from the Hugging Face repository during its first inference run. The checkpoint is cached for subsequent runs.
 
 ## Installation
 
 Clone the repository:
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd CAMO-ViT-Deployment
+git clone https://github.com/AkT-Dot-tech/CAMO-ViT-Dual-RGB-IR.git
+cd CAMO-ViT-Dual-RGB-IR
 ```
 
 Create a virtual environment:
@@ -188,7 +184,7 @@ Open the local URL displayed in the terminal and provide a compatible RGB and in
 - Requires paired RGB and infrared inputs.
 - Input modalities should be spatially aligned.
 - The model is designed for binary camouflaged-object segmentation.
-- Input images are resized to 384 Ã— 384.
+- Input images are resized to 384 × 384.
 - Benchmark performance does not guarantee equivalent performance on arbitrary real-world imagery.
 - Further independent testing is required to assess generalization.
 
@@ -206,6 +202,4 @@ The dual-stream model has been trained and evaluated. The local inference applic
 
 ---
 
-**CAMO-ViT â€” Exploring Multimodal Vision for Camouflaged Object Segmentation.**
-
-
+**CAMO-ViT — Exploring Multimodal Vision for Camouflaged Object Segmentation.**
