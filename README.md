@@ -31,7 +31,7 @@ It established the initial segmentation pipeline and provided a baseline for sub
 
 Although the model performed well on the dataset's test images, its predictions were less reliable on arbitrary images outside the training dataset. This highlighted the need to investigate generalization, dataset diversity, and the limitations of relying on visible-spectrum information alone.
 
-Original RGB-only project: [GitHub repository â€” add original repository URL]
+Original RGB-only project: (https://github.com/AkT-Dot-tech/CAMO-ViT)
 
 ### Version 2 â€” Multimodal RGB+IR CAMO-ViT
 
