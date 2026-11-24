@@ -1,0 +1,6 @@
+# torch already installed hai (CUDA wala) - usko dobara install mat karna
+transformers>=4.40
+scipy
+matplotlib
+pillow
+numpy

@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.log
+*.tmp
+.ipynb_checkpoints/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Datasets and experiment outputs
+VIAC/
+validation_results/
+runs/
+outputs/
+
+# Model checkpoints and archives
+model/
+*.pth
+*.pt
+*.zip
+
+# Environment variables
+.env
