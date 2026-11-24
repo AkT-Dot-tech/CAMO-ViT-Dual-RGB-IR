@@ -122,7 +122,9 @@ The project includes a Streamlit application that allows users to:
 - Inspect probability maps.
 - Download prediction outputs.
 
-**Live Demo:** Coming soon.
+
+**Live Demo:** [Launch CAMO-ViT](https://camo-vit-dual-rgb-ir-avgchanp3isnwqndxhctzu.streamlit.app/)
+The application is publicly deployed on Streamlit Community Cloud. Users can upload corresponding RGB and infrared images to generate a binary segmentation mask, segmentation overlay, and pixel-wise probability map.
 
 ## Model Checkpoint
 
